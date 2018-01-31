@@ -17,8 +17,6 @@ public class justjava extends AppCompatActivity {
 
     }
 
-
-
     public void increment(View view){
         quantity = quantity + 1;
         display (quantity);
@@ -29,8 +27,10 @@ public class justjava extends AppCompatActivity {
         display (quantity);
         displayPrice (quantity * 5);
     }
-    public void submitOrder(View view) {
-        displayPrice (quantity*5);
+    public void submitOrder(View view){
+        String priceMessage = "Total: $ " + (quantity *5);
+        priceMessage = priceMessage + " \nThank You!";
+        displayMessage (priceMessage);
     }
 
     private void display(int number) {
@@ -41,6 +41,10 @@ public class justjava extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 
 }
