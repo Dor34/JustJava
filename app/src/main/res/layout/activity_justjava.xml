@@ -5,17 +5,51 @@
     android:layout_height="match_parent"
     android:background="@drawable/need_more_coffee"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
     tools:context="com.example.android.justjava.justjava">
 
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/check_box_header"
+            android:text="@string/toppings"
+            android:textAllCaps="true"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/check_box_text_1"
+            android:text="@string/whipped_cream"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/check_box_2_vert"
+            android:layout_marginStart="@dimen/check_box_2_vert"
+            android:layout_marginTop="@dimen/check_box_2"
+            android:text="@string/caramel"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/quantity"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_orange_dark"
@@ -54,25 +88,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/price"
+        android:text="@string/order_summary"
         android:textAllCaps="true"
         android:textColor="@android:color/holo_orange_dark"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/price_text_view"
+        android:id="@+id/order_summary_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/zero"
-        android:textAllCaps="true"
-        android:textColor="@android:color/white" />
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="submitOrder"
-        android:text="@string/order" />
+        android:text="@string/order"
+        android:textColorLink="@color/colorAccent" />
 
 </LinearLayout>

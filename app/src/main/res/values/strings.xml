@@ -7,4 +7,8 @@
     <string name="price">Price</string>
     <string name="zero">$0</string>
     <string name="order">Order</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="toppings">Toppings</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="caramel">Caramel</string>
 </resources>
