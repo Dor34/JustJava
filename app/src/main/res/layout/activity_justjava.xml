@@ -26,22 +26,26 @@
             android:textStyle="bold" />
 
         <CheckBox
+            android:id="@+id/whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/check_box_text_1"
+            android:onClick="onCheckboxClicked"
             android:text="@string/whipped_cream"
             android:textColor="@android:color/holo_red_light"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
         <CheckBox
+            android:id="@+id/caramel_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/check_box_2_vert"
             android:layout_marginStart="@dimen/check_box_2_vert"
             android:layout_marginTop="@dimen/check_box_2"
+            android:onClick="onCheckboxClicked"
             android:text="@string/caramel"
             android:textColor="@android:color/holo_red_light"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
     </RelativeLayout>
 
