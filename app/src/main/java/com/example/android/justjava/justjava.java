@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 //import static com.example.android.justjava.R.id.caramel_checkbox;
@@ -11,11 +12,16 @@ import android.widget.TextView;
 
 public class justjava extends AppCompatActivity {
     int quantity = 0;
+    CheckBox whippedCreamCheckbox;
+    CheckBox caramelCheckbox;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_justjava);
+        whippedCreamCheckbox = findViewById (R.id.whipped_cream_checkbox);
+        caramelCheckbox = findViewById (R.id.caramel_checkbox);
 
     }
 
@@ -35,22 +41,22 @@ public class justjava extends AppCompatActivity {
 
     /**
      * This method is called when the order button is clicked.
-     * @param price
      */
-    public void submitOrder(int price) {
-        CheckBox whippedCreamCheckbox = findViewById (R.id.whipped_cream_checkbox);
-        boolean hasWhippedCream = whippedCreamCheckbox.isChecked ();
-        CheckBox caramelCheckbox = findViewById (R.id.caramel_checkbox);
-        boolean hasCaramel = caramelCheckbox.isChecked ();
-        TextView priceTextView = findViewById (R.id.order_summary_text_view);
-        String priceMessage = "Hello Dorian \nYour total for \n" + quantity;
-        priceMessage += " cup(s) of coffee is $" + calculatePrice ();
-        priceMessage += " \nWith Whipped Cream";
-        priceMessage += " \nWith Caramel";
-        priceMessage += "\n Thank you!";
-        priceTextView.setText (priceMessage);
+    public void submitOrder(View view) {
+        EditText nameField = findViewById(R.id.name_field);
+        nameField.getText ().toString ();
+            boolean hasWhippedCream = whippedCreamCheckbox.isChecked ();
+            boolean hasCaramel = caramelCheckbox.isChecked ();
+            TextView priceTextView = findViewById (R.id.order_summary_text_view);
+            String priceMessage = ("Hello:  " + nameField.getText ());
+            priceMessage += " \nYour total for \n" + quantity;
+            priceMessage += " cup(s) of coffee is $" + calculatePrice();
+            priceMessage += " \n With Whipped Cream? " +  hasWhippedCream;
+            priceMessage += " \n With Caramel? " +  hasCaramel;
+            priceMessage += " \n Thank you!";
+            priceTextView.setText (priceMessage);
+        }
 
-    }
 
     /**
      * Calculates the price of the order.
@@ -71,20 +77,5 @@ public class justjava extends AppCompatActivity {
         orderSummaryTextView.setText (message);
     }
 
-    public void onCheckboxClicked(View view) {
-        // Check which checkbox was clicked
-        CheckBox checkBox = (CheckBox)view;
-        //code to check if this checkbox is checked!
-        if(checkBox.isChecked()){
-            String addWhippedCream = "true";
-        } else {
-            String addWhippedCream = "false";
 
-        if(checkBox.isChecked()){
-            String addCaramel = "true";
-        }else {
-            String addCaramel = "false";
-        }
-        }
-    }
 }
